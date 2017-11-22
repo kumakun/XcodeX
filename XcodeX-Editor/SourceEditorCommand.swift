@@ -40,6 +40,11 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             
         case "InsertLineAbove":
             invocation.buffer.lines.insert("    ", at: start)
+            let position = XCSourceTextPosition(line: start, column: 4)
+            let selection = XCSourceTextRange(start: position, end: position)
+            invocation.buffer.selections.removeAllObjects()
+            invocation.buffer.selections.add(selection)
+            
             
         case "InsertLineBelow":
             invocation.buffer.lines.insert("    ", at: end+1)
