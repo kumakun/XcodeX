@@ -17,11 +17,16 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         
         let identifier = invocation.commandIdentifier.split(separator: ".").last!
         
+        // 选中区域
+        let firstSelectObject = invocation.buffer.selections.firstObject as! XCSourceTextRange
+        let lastSelectObject = invocation.buffer.selections.lastObject as!XCSourceTextRange
+        
+        // 位置
+        let start = firstSelectObject.start.line
+        let end = lastSelectObject.end.line
+        
         switch identifier {
         case "DuplicateCurrentLine":
-            let selectObject = invocation.buffer.selections.lastObject as!XCSourceTextRange
-            let start = selectObject.start.line
-            let end = selectObject.end.line
             let lines = invocation.buffer.lines.subarray(with: NSMakeRange(start, end-start+1))
             var index = end + 1;
             for line in lines {
@@ -30,16 +35,14 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             }
             
         case "DeleteCurrentLine":
-            // 第一个选中区域
-            let firstSelectObject = invocation.buffer.selections.firstObject as! XCSourceTextRange
-            // 开始删除的位置
-            let start = firstSelectObject.start.line
-            // 要删除的行数
-            let end = firstSelectObject.end.line
-            // 设置删除的范围
             let deleteRange = IndexSet(integersIn: start...end)
-            // 删除对应行的代码
             invocation.buffer.lines.removeObjects(at: deleteRange)
+            
+        case "InsertLineAbove":
+            invocation.buffer.lines.insert("    ", at: start)
+            
+        case "InsertLineBelow":
+            invocation.buffer.lines.insert("    ", at: end+1)
             
         default :
             print("Unknown identifier.")
