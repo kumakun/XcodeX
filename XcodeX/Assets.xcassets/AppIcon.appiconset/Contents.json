@@ -1,53 +1,63 @@
 {
   "images" : [
     {
-      "idiom" : "mac",
       "size" : "16x16",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-16.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "16x16",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-32.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "mac",
       "size" : "32x32",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-33.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "32x32",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-64.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "mac",
       "size" : "128x128",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-128.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "128x128",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-256.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "mac",
       "size" : "256x256",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-257.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "256x256",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-512.png",
       "scale" : "2x"
     },
     {
-      "idiom" : "mac",
       "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-513.png",
       "scale" : "1x"
     },
     {
-      "idiom" : "mac",
       "size" : "512x512",
+      "idiom" : "mac",
+      "filename" : "smartkeyboard-1024.png",
       "scale" : "2x"
     }
   ],
